@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     messageContainer.style.borderWidth = `${wpexSiaPhpData.borderWith || 0}px`;
     messageContainer.style.borderRadius = `${wpexSiaPhpData.borderRadius || 0}px`;
     messageContainer.style.padding = `${wpexSiaPhpData.padding || 0}px`;
-    messageContainer.style.borderStyle = wpexSiaPhpData.borderStyle ? 'solid' : 'none';
+    messageContainer.style.borderStyle = wpexSiaPhpData.borderStyle;
 
 
     function formatDate(date, calendarType) {
