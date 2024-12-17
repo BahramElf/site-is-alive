@@ -38,3 +38,5 @@ function wpex_sia_deactivate()
     do_action('wpex_sia_after_deactivate');
 }
 register_deactivation_hook(__FILE__, 'wpex_sia_deactivate');
+
+// test
