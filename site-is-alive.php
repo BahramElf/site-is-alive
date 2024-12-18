@@ -2,11 +2,13 @@
 
 /**
  * Plugin Name: Site is Alive
- * Plugin URI:  https://wpex.ir
- * Description: Display a message to reassure visitors that the site is active and up-to-date.
+ * Plugin URI:  https://wpex.ir/site-is-alive
+ * Description: Display a message with the current date and time to reassure users that your site is active and up-to-date.
  * Version:     1.0.0
  * Author:      Bahram Chinsari
  * Author URI:  https://wpex.ir
+ * License: GPL v3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: site-is-alive
  * Domain Path: /languages
  */
