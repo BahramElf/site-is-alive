@@ -1,5 +1,5 @@
 === Site is Alive ===
-Contributors: yourusername  
+Contributors: wpexir, bahramelf
 Donate link: https://wpex.ir/donate
 Tags: date display, solar hijri, lunar hijri, active site message  
 Requires at least: 5.0  

@@ -2,6 +2,12 @@
 // wpex-sia-functions.php
 defined('ABSPATH') || exit;
 
+/**
+ * Gets the localized date based on selected calendar type
+ * 
+ * @since 1.0.0
+ * @return string Formatted date string in selected calendar format
+ */
 function wpex_sia_get_localized_date()
 {
     $calendar_type = get_option('wpex_sia_calendar_type', 'gregorian');
@@ -34,18 +40,23 @@ function wpex_sia_get_localized_date()
     }
 }
 
-// Enqueue styles and scripts.
+/**
+ * Enqueues frontend styles and scripts, localizes JavaScript data
+ * 
+ * @since 1.0.0
+ * @return void
+ */
 function wpex_sia_enqueue_assets()
 {
     wp_enqueue_style('wpex-sia-style', WPEX_SIA_PLUGIN_URL . 'assets/css/wpex-sia-front-css.css', [], WPEX_SIA_VERSION);
     wp_enqueue_script('wpex-sia-script', WPEX_SIA_PLUGIN_URL . 'assets/js/wpex-sia-front-js.js', [], WPEX_SIA_VERSION, true);
 
-    $message = esc_js(get_option('wpex_sia_message_text', __('Site is active. Prices and availability of products are up-to-date.', WPEX_SIA_TEXT_DOMAIN)));
+    $message = esc_js(get_option('wpex_sia_message_text', __('Site is active. Prices and availability of products are up-to-date.', 'site-is-alive')));
     $date_time = wpex_sia_get_localized_date();
     $calendar_type = get_option('wpex_sia_calendar_type', 'gregorian');
     // Pass translations and dynamic data.
     wp_localize_script('wpex-sia-script', 'wpexSiaPhpData', [
-        'message' => esc_js(get_option('wpex_sia_message_text', __('Site is active. Prices and availability of products are up-to-date.', WPEX_SIA_TEXT_DOMAIN))),
+        'message' => esc_js(get_option('wpex_sia_message_text', __('Site is active. Prices and availability of products are up-to-date.', 'site-is-alive'))),
         'dateTime' => wpex_sia_get_localized_date(),
         'calendarType' => get_option('wpex_sia_calendar_type', 'gregorian'),
         'displayDate' => get_option('wpex_sia_display_date', 1),
@@ -64,7 +75,12 @@ function wpex_sia_enqueue_assets()
 }
 add_action('wp_enqueue_scripts', 'wpex_sia_enqueue_assets');
 
-// Register shortcode.
+/**
+ * Registers the [site_is_alive] shortcode
+ * 
+ * @since 1.0.0
+ * @return string HTML output for the site status message
+ */
 function wpex_sia_display_message_shortcode()
 {
     ob_start();
@@ -76,4 +92,4 @@ function wpex_sia_display_message_shortcode()
 <?php
     return ob_get_clean();
 }
-add_shortcode('site_is_alive', 'wpex_sia_display_message_shortcode');
+add_shortcode('wpex_sia_site_is_alive', 'wpex_sia_display_message_shortcode');
