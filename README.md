@@ -1,11 +1,11 @@
-=== Site is Alive ===
-Contributors: wpexir, bahramelf
-Donate link: https://wpex.ir/donate
+=== Site is Alive ===  
+Contributors: wpexir, bahramelf  
+Donate link: https://wpex.ir/donate  
 Tags: date display, solar hijri, lunar hijri, active site message  
 Requires at least: 5.0  
-Tested up to: 6.7.1
+Tested up to: 6.7.1  
 Requires PHP: 7.4  
-Stable tag: 1.0.0
+Stable tag: 1.0.0  
 License: GPL v3  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 
